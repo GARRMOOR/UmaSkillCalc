@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Uma Skill Optimizer",
+  "version": "1.0",
+  "description": "Calculates your best combination of skills for an Uma in conjunction with the Umalator",
+  "permissions": ["scripting", "activeTab"],
+  "action": {
+    "default_popup": "skillReader.html",
+    "default_icon": "skillReaderIcon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}

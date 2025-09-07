@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Uma Skill Optimizer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 10px;
+      width: 550px;
+      max-height: 700px;
+      overflow: hidden;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="number"], #skill-search {
+      width: 100px;
+      margin-left: 5px;
+    }
+
+    #skills-container {
+      max-height: 350px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th, td {
+      padding: 6px 8px;
+      border-bottom: 1px solid #ddd;
+      word-wrap: break-word;
+    }
+
+    th:nth-child(1), td:nth-child(1) { width: 35%; text-align: left; }
+    th:nth-child(2), td:nth-child(2) { width: 20%; text-align: right; }
+    th:nth-child(3), td:nth-child(3) { width: 20%; text-align: right; }
+    th:nth-child(4), td:nth-child(4) { width: 25%; text-align: center; }
+
+    th {
+      background-color: #f2f2f2;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    tr.selected {
+      background-color: #e0f7fa;
+    }
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: help;
+      color: orange;
+      font-weight: bold;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 180px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 12px;
+    }
+
+    .tooltip .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 5px;
+      border-style: solid;
+      border-color: #333 transparent transparent transparent;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    #output {
+        white-space: pre-line;
+        font-weight: bold;
+        max-height: 150px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        padding: 5px;
+        font-size: 14px; /* increased from default */
+    }
+
+
+    #calculate {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Uma Skill Optimizer</h2>
+
+  <label>Total Points: <input type="number" id="points"></label>
+  <label>Search Skills: <input type="text" id="skill-search" placeholder="Type skill name..."></label>
+
+  <div id="skills-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Skill</th>
+          <th>Gain (mean)</th>
+          <th>Cost</th>
+          <th>Warning</th>
+        </tr>
+      </thead>
+      <tbody id="skills">
+        <!-- Skill rows populated here -->
+      </tbody>
+    </table>
+  </div>
+
+  <button id="calculate">Calculate Best Combo</button>
+
+  <h3>Result:</h3>
+  <pre id="output"></pre>
+
+  <script src="umaSkills.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
