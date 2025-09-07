@@ -101,18 +101,18 @@
     }
 
     #output {
-        white-space: pre-line;
-        font-weight: bold;
-        max-height: 150px;
-        overflow-y: auto;
-        border: 1px solid #ccc;
-        padding: 5px;
-        font-size: 14px; /* increased from default */
+      white-space: pre-line;
+      font-weight: bold;
+      max-height: 150px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 5px;
+      font-size: 16px; /* larger results text */
     }
 
-
-    #calculate {
+    #calculate, #reset {
       margin-bottom: 10px;
+      margin-right: 5px;
     }
   </style>
 </head>
@@ -139,6 +139,7 @@
   </div>
 
   <button id="calculate">Calculate Best Combo</button>
+  <button id="reset">Reset</button>
 
   <h3>Result:</h3>
   <pre id="output"></pre>

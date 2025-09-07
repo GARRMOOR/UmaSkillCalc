@@ -3,7 +3,7 @@
   "name": "Uma Skill Optimizer",
   "version": "1.0",
   "description": "Calculates your best combination of skills for an Uma in conjunction with the Umalator",
-  "permissions": ["scripting", "activeTab"],
+  "permissions": ["scripting", "activeTab", "storage"],
   "action": {
     "default_popup": "skillReader.html",
     "default_icon": "skillReaderIcon.png"
